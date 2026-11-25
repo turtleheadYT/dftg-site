@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="370" viewBox="0 0 320 370" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Tesseract logo</title>
+  <desc id="desc">A static isometric projection of a tesseract, with nested cube outlines and connecting edges in white on a transparent background.</desc>
+  <defs>
+    <linearGradient id="white-edge" x1="20" y1="24" x2="300" y2="346" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff"/>
+      <stop offset="0.5" stop-color="#dedede"/>
+      <stop offset="1" stop-color="#f5f5f5"/>
+    </linearGradient>
+  </defs>
+  <g stroke="url(#white-edge)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Outer cube silhouette. -->
+    <path d="M160 24 300 105V265L160 346 20 265V105Z"/>
+    <!-- Inner cube silhouette. -->
+    <path d="M160 105 230 145V225L160 265 90 225V145Z"/>
+    <!-- Coincident projected edges of the complete tesseract. -->
+    <path d="M160 24V346M20 105 300 265M300 105 20 265"/>
+  </g>
+</svg>

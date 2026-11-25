@@ -4,38 +4,49 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex, nofollow">
-    <meta name="theme-color" content="#141514">
+    <meta name="theme-color" content="#171717">
     <meta name="color-scheme" content="dark">
-    <title>PT Home — Coming Soon</title>
-    <link rel="stylesheet" href="./style.css">
+    <meta name="description" content="News, ideas, and updates from Probably Turtle, an independent game studio.">
+    <meta name="pt-home-design" content="monochrome-bulletin-v1">
+    <title>Probably Turtle — Studio News</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css?v=bulletin-1">
+    <script src="./news.js?v=bulletin-1" defer></script>
   </head>
   <body>
-    <main id="homepage" aria-label="PT Home homepage">
-      <nav class="site-header" aria-label="Primary navigation">
-        <a class="brand" href="./" aria-label="PT Home">PT<span>Home</span></a>
-        <span class="status"><i aria-hidden="true"></i> In development</span>
-      </nav>
-
-      <section class="hero" aria-labelledby="hero-title">
-        <p class="eyebrow">A place in the making</p>
-        <h1 id="hero-title">We’re building<br><em>PT Home.</em></h1>
-        <p class="intro">
-          A thoughtful new home for what matters most. We’re shaping the
-          experience now—come back soon to see what’s next.
-        </p>
-
-        <div class="actions">
-          <a class="button" href="mailto:hello@pthome.example">
-            Get in touch <span aria-hidden="true">↗</span>
-          </a>
-          <span class="note">Launching soon</span>
-        </div>
+    <main id="homepage" aria-label="Probably Turtle studio homepage">
+      <header class="topline">
+        <span class="page-label">Home</span>
+        <span class="top-note">Independent game studio</span>
+      </header>
+      <section class="intro" aria-labelledby="studio-title">
+        <p class="kicker">A little curious. A little unexpected.</p>
+        <h1 id="studio-title">Probably <span>Turtle.</span></h1>
+        <p class="intro-copy">Games, experiments, and everything happening around the studio.</p>
       </section>
-
-      <footer>
-        <span>© 2026 PT Home</span>
-        <span>Made with intention</span>
+      <section class="news-section" aria-labelledby="news-title">
+        <div class="section-heading">
+          <h2 id="news-title">Latest from the studio</h2>
+          <span>The noticeboard</span>
+        </div>
+        <div id="news-grid" class="news-grid" aria-busy="true"></div>
+        <p id="news-status" class="news-status" role="status">Loading studio news…</p>
+        <button id="retry-news" class="outline-button" type="button" hidden>Try again</button>
+        <noscript><p class="news-status">Enable JavaScript to read studio news.</p></noscript>
+      </section>
+      <footer class="legal">
+        <div class="legal-copy"><strong>Probably Turtle</strong><span>© 2026 Probably Turtle. All rights reserved.</span></div>
+        <div class="legal-contact"><span>Contact the studio</span><a href="mailto:probablyturtlecontact@gmail.com">probablyturtlecontact@gmail.com</a></div>
       </footer>
     </main>
+    <dialog id="news-article" class="article" aria-labelledby="article-title">
+      <button id="close-article" class="close-button" type="button" aria-label="Close article">×</button>
+      <p id="article-category" class="kicker"></p>
+      <h2 id="article-title"></h2>
+      <p id="article-body" class="article-body"></p>
+      <a id="article-link" class="article-link" hidden></a>
+    </dialog>
   </body>
 </html>
