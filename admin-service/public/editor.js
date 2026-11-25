@@ -1,4 +1,5 @@
 const byId = id => document.getElementById(id);
+if (new URLSearchParams(location.search).has('signedin')) history.replaceState(null, '', location.pathname);
 const fields = ['title', 'category', 'summary', 'body', 'art', 'image', 'link'];
 let cards = [], selected = 0, sha, csrf, dirty = false, busy = false;
 const status = message => { byId('status').textContent = message; };

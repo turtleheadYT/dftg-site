@@ -111,6 +111,7 @@ export function createServer(config, fetchImpl = fetch) {
       if (path.startsWith('/api/')) {
         if (!user) throw fail(401, 'Please sign in again.');
         if (req.method !== 'GET' && !matches(req.headers['x-csrf-token'], user.csrf)) throw fail(403, 'Session check failed. Refresh and try again.');
+        if (req.method === 'GET' && path === '/api/session') return send(200, { authenticated: true });
         if (req.method === 'GET' && path === '/api/news') {
           const file = await github('GET');
           return send(200, { ...validateNews(JSON.parse(Buffer.from(file.content, 'base64').toString('utf8'))), sha: file.sha, csrf: user.csrf });

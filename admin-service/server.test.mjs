@@ -36,6 +36,7 @@ test('private editor: authentication, CSRF, publish, conflicts and logout', asyn
     return fetch(base + path, { method, headers: { Origin: origin, 'Content-Type': 'application/json', ...(cookie ? { Cookie: cookie } : {}), ...(csrf ? { 'X-CSRF-Token': csrf } : {}) }, ...(data ? { body: JSON.stringify(data) } : {}) });
   }
   assert.equal((await request('/api/news')).status, 401);
+  assert.equal((await request('/api/session')).status, 401);
   const loginPage = await request('/PT_home/admin/');
   assert.match(await loginPage.text(), /Admin password/);
   assert.equal(loginPage.headers.get('cache-control'), 'no-store');
@@ -46,6 +47,7 @@ test('private editor: authentication, CSRF, publish, conflicts and logout', asyn
   assert.equal(login.status, 200);
   cookie = login.headers.get('set-cookie').split(';')[0];
   assert.match(login.headers.get('set-cookie'), /HttpOnly; SameSite=Strict/);
+  assert.deepEqual(await (await request('/api/session')).json(), { authenticated: true });
   assert.match(await (await request('/PT_home/admin/')).text(), /Publish changes/);
   const loaded = await (await request('/api/news')).json();
   assert.equal(loaded.cards[0].title, 'Hello');
@@ -62,6 +64,7 @@ test('private editor: authentication, CSRF, publish, conflicts and logout', asyn
   conflict = true;
   assert.equal((await request('/api/news', 'PUT', { ...news, sha }, loaded.csrf)).status, 409);
   assert.equal((await request('/api/logout', 'POST', {}, loaded.csrf)).status, 200);
+  assert.equal((await request('/api/session')).status, 401);
   assert.equal((await request('/api/news')).status, 401);
 });
 
