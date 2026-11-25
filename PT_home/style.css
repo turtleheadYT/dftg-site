@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap');
+
 :root {
   color-scheme: dark;
-  background: #202020;
-  color: #fff;
-  font-family: system-ui, sans-serif;
+  background: #141514;
+  color: #f3f0e8;
+  font-family: "DM Sans", Arial, sans-serif;
 }
 
 * {
@@ -19,4 +21,183 @@ body {
 #homepage {
   min-height: 100vh;
   min-height: 100dvh;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 30px clamp(24px, 6vw, 96px) 25px;
+  background:
+    radial-gradient(circle at 83% 18%, rgba(176, 189, 138, 0.2), transparent 23rem),
+    radial-gradient(circle at 12% 88%, rgba(132, 108, 76, 0.22), transparent 29rem),
+    #141514;
+}
+
+#homepage::before,
+#homepage::after {
+  content: "";
+  position: absolute;
+  border: 1px solid rgba(238, 233, 214, 0.1);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+#homepage::before {
+  width: min(62vw, 850px);
+  aspect-ratio: 1;
+  right: -18vw;
+  top: 9vh;
+}
+
+#homepage::after {
+  width: min(45vw, 570px);
+  aspect-ratio: 1;
+  left: -18vw;
+  bottom: -18vw;
+}
+
+.site-header,
+footer {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  color: inherit;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.06em;
+  text-decoration: none;
+}
+
+.brand span {
+  color: #b9c982;
+  font-family: "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+  margin-left: 0.14em;
+}
+
+.status,
+.eyebrow,
+footer {
+  font-family: "DM Mono", monospace;
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: #c9c6b9;
+}
+
+.status i {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: #b9c982;
+  box-shadow: 0 0 0 4px rgba(185, 201, 130, 0.12);
+}
+
+.hero {
+  position: relative;
+  z-index: 1;
+  width: min(780px, 100%);
+  margin: auto 0;
+  padding: 70px 0;
+}
+
+.eyebrow {
+  color: #b9c982;
+  margin: 0 0 1.5rem;
+}
+
+h1 {
+  max-width: 760px;
+  margin: 0;
+  font-size: clamp(3.8rem, 9.5vw, 8.6rem);
+  font-weight: 500;
+  letter-spacing: -0.075em;
+  line-height: 0.88;
+}
+
+h1 em {
+  color: #c9d99a;
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 500;
+}
+
+.intro {
+  max-width: 440px;
+  margin: 2.25rem 0 0;
+  color: #c5c4bc;
+  font-size: clamp(1rem, 1.4vw, 1.12rem);
+  line-height: 1.65;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.3rem;
+  margin-top: 2.25rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.7rem;
+  padding: 0.9rem 1.15rem 1rem 1.3rem;
+  color: #171813;
+  background: #c9d99a;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.button:hover {
+  background: #d9e8ae;
+  transform: translateY(-2px);
+}
+
+.button span {
+  font-size: 1.15rem;
+}
+
+.note {
+  color: #a7a89f;
+  font-size: 0.78rem;
+}
+
+footer {
+  color: #8d8e86;
+}
+
+@media (max-width: 480px) {
+  #homepage {
+    padding: 24px 21px 20px;
+  }
+
+  .status {
+    font-size: 0.58rem;
+  }
+
+  h1 {
+    font-size: clamp(3.35rem, 18vw, 5rem);
+  }
+
+  .hero {
+    padding: 55px 0;
+  }
+
+  footer {
+    font-size: 0.56rem;
+  }
 }
