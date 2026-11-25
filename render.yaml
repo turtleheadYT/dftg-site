@@ -1,0 +1,21 @@
+# Add this as a NEW Blueprint; leave the existing dftg.site static service unchanged.
+services:
+  - type: web
+    name: probably-turtle-news-admin
+    runtime: node
+    plan: free
+    repo: https://github.com/turtleheadYT/dftg-site
+    branch: main
+    rootDir: admin-service
+    buildCommand: node --check server.mjs
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: "24"
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: GITHUB_TOKEN
+        sync: false
+      - key: SESSION_SECRET
+        generateValue: true

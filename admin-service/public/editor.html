@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>News editor — Probably Turtle</title><link rel="stylesheet" href="./style.css"><script src="./editor.js" defer></script></head>
+<body><main class="workspace"><header><div><p class="eyebrow">PROBABLY TURTLE / PRIVATE</p><h1>Studio news.</h1><p>Add a story, make an edit, then publish when it’s ready.</p></div><div class="actions"><a href="https://dftg.site/PT_home/" target="_blank" rel="noopener">View homepage</a><button id="logout" class="subtle">Sign out</button></div></header>
+<div class="toolbar"><button id="add" disabled>+ Add card</button><span id="count"></span><button id="reload" class="subtle">Reload saved news</button><button id="publish" disabled>Publish changes</button></div><p id="status" role="status">Loading your news…</p>
+<div class="editor-layout"><nav id="cards" aria-label="News cards"></nav><section id="detail" hidden><form id="edit"><div class="section-heading"><h2>Edit card</h2><div class="actions"><button type="button" id="up" class="subtle">Move up</button><button type="button" id="down" class="subtle">Move down</button><button type="button" id="delete" class="subtle danger">Delete</button></div></div>
+<label for="title">Title</label><input id="title" maxlength="160" required>
+<label for="category">Category</label><input id="category" maxlength="80" placeholder="Studio news">
+<label for="summary">Short description</label><textarea id="summary" rows="3" maxlength="600" required></textarea>
+<label for="body">Full article</label><textarea id="body" rows="8" maxlength="20000" placeholder="Write your story here. Blank lines create paragraphs."></textarea>
+<div class="field-row"><div><label for="art">Artwork</label><select id="art"><option value="tesseract">Tesseract</option><option value="studio">Studio</option><option value="community">Community</option><option value="minimal">Minimal</option></select></div><div><label for="image">Image URL (optional)</label><input id="image" maxlength="2000" placeholder="https://… or a site asset path"></div></div>
+<label for="link">Link (optional)</label><input id="link" maxlength="2000" placeholder="https://… or mailto:…">
+</form><aside class="preview"><p class="eyebrow">TEXT PREVIEW</p><p id="preview-category"></p><h2 id="preview-title"></h2><p id="preview-summary"></p><p class="hint">Artwork uses the existing monochrome homepage styles. Image URLs appear in grayscale.</p></aside></section></div>
+<footer>Publishing saves to GitHub. The launcher receives the changes after the website deploys and Home is reloaded.</footer></main></body></html>

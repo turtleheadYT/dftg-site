@@ -9,7 +9,12 @@ page deliberately does not duplicate those controls.
 
 ## Edit the news cards
 
-Edit `PT_home/news.json` and push through the existing Render workflow. Cards
+Use the password-protected editor in `admin-service` after its one-time Render
+activation. See [the setup guide](admin-service/README.md). It provides forms to
+add, edit, delete, reorder, and publish cards without touching JSON. The admin
+runs on its own Render service; the public homepage remains on `dftg.site`.
+
+Alternatively, edit `PT_home/news.json` and push through the existing Render workflow. Cards
 appear in their array order. Each card supports `id`, `title`, `category`,
 `summary`, `body` (plain text, with paragraph newlines), `art`, optional `image`,
 and optional `link`. The built-in artwork styles are `tesseract`, `studio`,
