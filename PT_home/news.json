@@ -1,35 +1,4 @@
 {
   "version": 1,
-  "cards": [
-    {
-      "id": "welcome",
-      "title": "Welcome to Probably Turtle.",
-      "category": "Announcement",
-      "summary": "A home for our games, ideas, and whatever comes next.",
-      "body": "We’re Probably Turtle. This is our little corner of the world—a place to follow the studio, see what we’re making, and catch the stories along the way.",
-      "art": "tesseract",
-      "image": "",
-      "link": ""
-    },
-    {
-      "id": "behind-the-scenes",
-      "title": "A little peek behind the scenes.",
-      "category": "Studio notes",
-      "summary": "Ideas, experiments, and small discoveries from around the studio.",
-      "body": "Some ideas start on paper. Others start with ‘what if?’ This space is for the experiments, work-in-progress moments, and people behind Probably Turtle.",
-      "art": "studio",
-      "image": "",
-      "link": ""
-    },
-    {
-      "id": "community",
-      "title": "Let’s start a conversation.",
-      "category": "Community",
-      "summary": "Have an idea, a question, or something to share? We’d love to hear it.",
-      "body": "For questions and studio enquiries, contact Probably Turtle at probablyturtlecontact@gmail.com.",
-      "art": "community",
-      "image": "",
-      "link": "mailto:probablyturtlecontact@gmail.com"
-    }
-  ]
+  "cards": []
 }
