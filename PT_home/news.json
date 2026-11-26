@@ -1,4 +1,15 @@
 {
   "version": 1,
-  "cards": []
+  "cards": [
+    {
+      "id": "0fe6d4f5-dd24-4245-9c94-a18a7335bc1b",
+      "title": "New story",
+      "category": "Studio news",
+      "summary": "dwa",
+      "body": "dwadwa",
+      "art": "minimal",
+      "image": "",
+      "link": ""
+    }
+  ]
 }
