@@ -60,9 +60,9 @@
     copy.append(element('span', 'card-category', card.category || 'Studio news'),
       element('h3', '', card.title), element('p', 'card-summary', card.summary));
     const bottom = element('span', 'card-bottom');
-    const plus = element('span', 'card-plus', '+');
-    plus.setAttribute('aria-hidden', 'true');
-    bottom.append(element('span', '', 'Read the story'), plus);
+    const icon = element('span', 'story-icon');
+    icon.setAttribute('aria-hidden', 'true');
+    bottom.append(icon, element('span', '', 'Read the story'));
     copy.appendChild(bottom);
     trigger.append(art, copy);
     trigger.addEventListener('click', event => {
