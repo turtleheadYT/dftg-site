@@ -54,7 +54,7 @@ h1, h2, h3, p { margin: 0; }
 .story-icon::before, .story-icon::after { content: ""; position: absolute; left: 3px; right: 3px; height: 1px; top: 5px; background: #aaa; }
 .story-icon::after { top: 9px; }
 .card-art { position: absolute; right: .7rem; top: 50%; transform: translateY(-50%); display: block; width: 92px; height: 112px; overflow: hidden; opacity: .65; pointer-events: none; }
-.art-tesseract::before { content: ""; position: absolute; inset: 0; background: url("./assets/hero-tesseract.svg") center / contain no-repeat; }
+.art-tesseract::before { content: ""; position: absolute; inset: 0; background: url("./assets/tesseract.svg") center / contain no-repeat; }
 .art-studio::before, .art-studio::after { content: ""; position: absolute; bottom: 25px; width: 65px; height: 65px; background: #777; clip-path: polygon(50% 0, 100% 100%, 0 100%); }
 .art-studio::before { left: 0; opacity: .65; transform: scale(.8); transform-origin: bottom; }
 .art-studio::after { right: 0; }
