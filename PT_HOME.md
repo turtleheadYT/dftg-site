@@ -3,8 +3,8 @@
 `PT_home/index.html` is the unlisted homepage intended for the desktop app's
 embedded webview. Its published address is `https://dftg.site/PT_home/`.
 
-The page uses the monochrome studio design: a centered tesseract hero, compact
-news cards, section navigation, and a compact contact/about footer.
+The page uses the monochrome studio design: a tesseract beside the centered
+studio title, compact news cards, a simple brand header, and a contact/about footer.
 The launcher already adds its overlay sidebar, title bar, and tesseract; this
 page deliberately does not duplicate those controls.
 
